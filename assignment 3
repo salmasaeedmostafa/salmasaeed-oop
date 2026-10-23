@@ -1,0 +1,148 @@
+problem 1 :
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int n = input.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+          for (int j = 1; j <= n; j++) {
+                System.out.print(i * j + "\t");
+            }
+            System.out.println();
+        }
+    }
+problem 2:
+  
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int n = input.nextInt();
+        int sum = 0;
+
+        while (n > 0) {
+            int digit = n % 10;
+            sum = sum + digit;
+            n = n / 10;
+        }
+
+        System.out.println(sum);
+    }
+}
+
+problem 3:
+
+  
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int n = input.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+  problem 4 :
+  
+ 
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int n = input.nextInt();
+
+        if (n == 0) {
+            System.out.println("No numbers entered");
+        } else {
+            int largest = n;
+            int smallest = n;
+            int sum = 0;
+            int count = 0;
+
+            while (n != 0) {
+                if (n > largest) {
+                    largest = n;
+                }
+
+                if (n < smallest) {
+                    smallest = n;
+                }
+
+                sum = sum + n;
+                count++;
+
+                n = input.nextInt();
+            }
+
+            double average = (double) sum / count;
+
+            System.out.println("Largest = " + largest);
+            System.out.println("Smallest = " + smallest);
+            System.out.println("Average = " + average);
+        }
+    }
+}
+problem 5 :
+  
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int n = input.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(i);
+            }
+            System.out.println();
+        }
+    }
+}
+
+  problem 6 :
+  
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int n = input.nextInt();
+        int sum = 0;
+
+        for (int i = 1; i < n; i++) {
+            if (n % i == 0) {
+                sum = sum + i;
+            }
+        }
+
+        if (n > 1 && sum == n) {
+            System.out.println("Perfect Number");
+        } else {
+            System.out.println("Not a Perfect Number");
+        }
+    }
+}
+
+
+
+
