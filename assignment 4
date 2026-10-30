@@ -1,0 +1,129 @@
+problem 1 
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static double getDouble(Scanner s, String prompt) {
+        System.out.print(prompt);
+        double num = s.nextDouble();
+        return num;
+    }
+
+    public static double celsiusToFahrenheit(double c) {
+        return c * 9.0 / 5.0 + 32;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        double c = getDouble(input, "Enter temperature in Celsius: ");
+
+        double f = celsiusToFahrenheit(c);
+
+        System.out.printf("Fahrenheit: %.2f%n", f);
+    }
+}
+
+problem 2
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static double coneVolume(double dValue, double hValue) {
+
+        double r = dValue / 2.0;
+
+        double volume = (1.0 / 3.0) * Math.PI * Math.pow(r, 2) * hValue;
+
+        return volume;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter diameter: ");
+        double d = input.nextDouble();
+
+        System.out.print("Enter height: ");
+        double h = input.nextDouble();
+
+        double result = coneVolume(d, h);
+
+        System.out.printf("Volume: %.2f%n", result);
+    }
+}
+
+
+problem 3 
+
+public class Main {
+
+    public static double average(int a, int b) {
+        return (a + b) / 2.0;
+    }
+
+    public static double average(int a, int b, int c) {
+        return (a + b + c) / 3.0;
+    }
+
+    public static double average(double a, double b) {
+        return (a + b) / 2;
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println(average(4, 7));
+
+        System.out.println(average(2, 4, 9));
+
+        System.out.println(average(2.5, 3.5));
+    }
+}
+
+problem 4 
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static String maskEmail(String email) {
+
+        email = email.trim();
+
+        int at = email.indexOf('@');
+
+        if (at == -1) {
+            return "Invalid Email";
+        }
+
+        String username = email.substring(0, at);
+        String domain = email.substring(at + 1).toLowerCase();
+
+        if (username.length() <= 2) {
+            return username + "@" + domain;
+        }
+
+        String result = username.substring(0, 2);
+
+        for (int i = 2; i < username.length(); i++) {
+            result += "*";
+        }
+
+        return result + "@" + domain;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter email: ");
+        String email = input.nextLine();
+
+        System.out.println(maskEmail(email));
+    }
+}
+
