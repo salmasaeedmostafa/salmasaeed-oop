@@ -1,0 +1,137 @@
+problem 1 
+ package javaapplication69;
+
+public class invoice {
+    
+    private String invoiceID ;
+   private double discount ;
+   private double totalInvoice ;
+   
+   public invoice (){
+   this.invoiceID = "1";
+   }
+
+
+    public invoice (String invoiceID, double discount, double totalInvoice) {
+        this.invoiceID = invoiceID;
+        this.discount = discount;
+        this.totalInvoice = totalInvoice;
+    }
+
+    public String getInvoiceID() {
+        return invoiceID;
+    }
+
+    public void setInvoiceID(String invoiceID) {
+        this.invoiceID = invoiceID;
+    }
+
+    public double getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(double discount) {
+        this.discount = discount;
+    }
+
+    public double getTotalInvoice() {
+        return totalInvoice;
+    }
+
+    public void setTotalInvoice(double totalInvoice) {
+        this.totalInvoice = totalInvoice;
+    }
+
+      public  double  calculateDiscountPrice(){
+           return totalInvoice - (totalInvoice * discount / 100) ;
+         
+      }  
+}
+
+  public static void main(String[] args) 
+    {
+        
+        invoice inv1 = new invoice ("1",2.5, 100);
+        System.out.println(inv1.getDiscount()+"before discount"+ inv1.calculateDiscountPrice()) ; 
+        inv1.setDiscount(5.5);
+        inv1.setTotalInvoice(200);
+                System.out.println(inv1.getDiscount()+"before discount"+ inv1.calculateDiscountPrice()) ; 
+
+    }
+    
+}
+
+    problem 2 
+    
+public class Location {
+    
+    private double maxValue;
+    private int column;
+
+   
+    public double getMaxValue() {
+        return maxValue;
+    }
+
+    public int getColumn() {
+        return column;
+    }
+
+    public void locateLargest(double[] values) {
+        maxValue = values[0];
+        column = 0;
+
+        for (int i = 1; i < values.length; i++) {
+            if (values[i] > maxValue) {
+                maxValue = values[i];
+                column = i;
+            }
+        }
+    }
+}
+
+
+import java.util.Scanner;
+
+public class TestLocation {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        
+        System.out.print("Enter the number of columns in the array: ");
+        int n = input.nextInt();
+        double[] values = new double[n];
+        System.out.print("Enter the array elements: ");
+        for (int i = 0; i < n; i++) {
+            values[i] = input.nextDouble();
+        } 
+        Location location = new Location();
+        location.locateLargest(values)
+        System.out.println("The location of the largest element is "
+import java.util.Scanner;
+
+public class TestLocation {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter the number of columns in the array: ");
+        int n = input.nextInt();
+        double[] values = new double[n];
+        System.out.print("Enter the array elements: ");
+        for (int i = 0; i < n; i++) {
+            values[i] = input.nextDouble();
+        }
+        Location location = new Location()
+        location.locateLargest(values);
+
+        System.out.println("The location of the largest element is "
+                + location.getMaxValue()
+                + " at position (" + location.getColumn() + ")");
+    }
+}
+
+               c
+    }
+}
+
+    
