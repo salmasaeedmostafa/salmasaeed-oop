@@ -1,0 +1,158 @@
+problem 1
+public class Student {
+private String studentID;
+    private String studentName;
+    private double GPA;
+    public Student(String studentID, String studentName, double GPA) {
+        this.studentID = studentID;
+        this.studentName = studentName;
+        this.GPA = GPA;
+    }
+ public Student() {
+        studentID = "000";
+        studentName = "Unknown";
+        GPA = 0.0;
+    }
+    public void setStudentID(String studentID) {
+        this.studentID = studentID;
+    }
+
+    public String getStudentID() {
+        return studentID;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public void setGPA(double GPA) {
+        this.GPA = GPA;
+    }
+
+    public double getGPA() {
+        return GPA;
+    }
+    public boolean isHonorStudent() {
+        return GPA >= 3.5;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+
+        Student s1 = new Student("123", "Ahmed", 3.9);
+
+        Student s2 = new Student();
+
+        s2.setGPA(3.8);
+
+        System.out.println(s1.getStudentID());
+        System.out.println(s1.getStudentName());
+        System.out.println(s1.getGPA());
+        System.out.println(s1.isHonorStudent());
+
+        System.out.println(s2.getStudentID());
+        System.out.println(s2.getStudentName());
+        System.out.println(s2.getGPA());
+        System.out.println(s2.isHonorStudent());
+    }
+}
+
+problem 2 
+public class BankAccount {
+
+    private String accountNumber;
+    private double balance;
+     public BankAccount() {
+        accountNumber = "0000";
+        balance = 0;
+    }
+     public BankAccount(String accountNumber, double balance) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+    }
+public void deposit(double amount) {
+        balance = balance + amount;
+    }
+ public void withdraw(double amount) {
+        if (balance >= amount) {
+            balance = balance - amount;
+        }
+    }
+
+ public double getBalance() {
+        return balance;
+    }
+ public String getAccountNumber() {
+        return accountNumber;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+
+        BankAccount b = new BankAccount("12345", 1000);
+
+        b.deposit(500);
+
+        b.withdraw(300);
+
+        System.out.println(b.getAccountNumber());
+        System.out.println(b.getBalance());
+    }
+}
+problem 3 
+public class ArrayStatistics {
+
+    private float maxValue;
+    private float minValue;
+     public float getMaxValue() {
+        return maxValue;
+    }
+
+    public float getMinValue() {
+        return minValue;
+    }
+     public void findMaxMin(float[] values) {
+
+        maxValue = values[0];
+        minValue = values[0];
+
+        for (int i = 1; i < values.length; i++) {
+
+            if (values[i] > maxValue) {
+                maxValue = values[i];
+            }
+
+            if (values[i] < minValue) {
+                minValue = values[i];
+            }
+        }
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter the number of elements: ");
+        int n = input.nextInt();
+
+        float[] arr = new float[n];
+
+        System.out.println("Enter the array elements:");
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = input.nextFloat();
+        }
+
+        ArrayStatistics obj = new ArrayStatistics();
+
+        obj.findMaxMin(arr);
+
+        System.out.println("Maximum value: " + obj.getMaxValue());
+        System.out.println("Minimum value: " + obj.getMinValue());
+    }
+}
